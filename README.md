@@ -34,7 +34,65 @@ This project explores cost-sharing patterns within 2026 Florida ACA Marketplace 
 Health insurance plans often come with many different options for customers to choose from. The objective of this project is to use data from the ACA Marketplace plans in Florida in order to discover and characterize health insurance patterns to better understand the options for customers. Plans offered through the Florida ACA Marketplace are categorized into five metal tiers - Bronze, Expanded Bronze, Silver, Gold, and Platinum with Bronze containing the lowest level insurance plans and Platinum having the highest level insurance plans. The main goal of this project is to investigate using machine learning concepts and models in order to answer the question “What distinct deductible and out-of-pocket maximum patterns exist with metal levels among Florida ACA Marketplace plans in 2026?”. 
 
 ## Visualizations
+The following visualizations illustrate K-means clustering across five ACA Marketplace metal levels. Elbow plots examine within-cluster variation across different values of K, while cluster scatterplots highlight similarities and differences in deductible and out-of-pocket maximum structures.
 
+### 1. Bronze Plans
+
+**Elbow Method**
+
+![Bronze Elbow Plot](visualizations/bronze-elbow.png)
+
+**K-Means Clustering**
+
+![Bronze Clusters](visualizations/bronze-cluster.png)
+
+### 2. Expanded Bronze Plans
+
+**Elbow Method**
+
+![Expanded Bronze Elbow Plot](visualizations/expandedbronze-elbow.png)
+
+**K-Means Clustering**
+
+![Expanded Bronze Clusters](visualizations/expandedbronze-cluster.png)
+
+### 3. Silver Plans
+
+**Elbow Method**
+
+![Silver Elbow Plot](visualizations/silver-elbow.png)
+
+**K-Means Clustering**
+
+![Silver Clusters](visualizations/silver-cluster.png)
+
+### 4. Gold Plans
+
+**Elbow Method**
+
+![Gold Elbow Plot](visualizations/gold-elbow.png)
+
+**K-Means Clustering**
+
+![Gold Clusters](visualizations/gold-cluster.png)
+
+### 5. Platinum Plans
+
+**Elbow Method**
+
+![Platinum Elbow Plot](visualizations/platinum-elbow.png)
+
+**K-Means Clustering**
+
+![Platinum Clusters](visualizations/platinum-cluster.png)
+
+---
+
+### Visualization Interpretation
+- **Elbow Plots:** Illustrate how within-cluster sum of squares (inertia) changes as the number of clusters increases, helping inform the selection of K.
+- **Cluster Scatterplots:** Display individual ACA Marketplace plan records grouped by similarities in deductible and out-of-pocket maximum values.
+- **Cluster Centroids:** Represent the central cost-sharing characteristics of each identified cluster.
+- **Metal-Level Comparisons:** Highlight variations in cost-sharing structures within individual metal categories, demonstrating differences beyond traditional metal-level classifications.
 
 ## Adaptations or Modifications
 While clustering the Platinum metal level, it was discovered that only 1 unique cost sharing combination existed. This prompted further exploration, revealing that overfiltering of missing values  created unclusterable data points. Unlike the other metal levels, Platinum plans often have $0 deductibles. Hence, explaining the large number of missing/nonapplicable values within this metal level. Consequently, the missing values were replaced with $0, uncovering 3 distinct clusters of varying MOOP costs and fixed $0 deductible. 
